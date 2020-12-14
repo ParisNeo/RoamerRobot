@@ -5,9 +5,10 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "maqueen": "github:jhlucky/maqueen#04e836719d009a1e8fe2cb03b324f0b70ee490be",
         "neopixel": "github:microsoft/pxt-neopixel#v0.7.3",
-        "pxt-pca9685": "github:jdarling/pxt-pca9685#v0.0.5"
+        "pxt-pca9685": "github:jdarling/pxt-pca9685#v0.0.5",
+        "MakerBit-IR-Receiver": "github:1010technologies/pxt-makerbit-ir-receiver#v1.5.2",
+        "maqueen": "github:jhlucky/maqueen#04e836719d009a1e8fe2cb03b324f0b70ee490be"
     },
     "files": [
         "main.blocks",
