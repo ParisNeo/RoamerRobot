@@ -20,6 +20,8 @@ maqueen.IR_callbackUser(function ({ myparam: message }) {
     	
     }
 })
+let DR = 0
+let DL = 0
 let PR = 0
 let PL = 0
 let EnMarche = 0
@@ -30,6 +32,8 @@ PCA9685.setLedDutyCycle(PCA9685.LEDNum.LED6, 100, 67)
 PCA9685.setLedDutyCycle(PCA9685.LEDNum.LED7, 100, 67)
 pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
 pins.setPull(DigitalPin.P11, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P12, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P13, PinPullMode.PullUp)
 EnMarche = 0
 let strip = neopixel.create(DigitalPin.P5, 18, NeoPixelMode.RGB)
 strip.clear()
@@ -39,8 +43,12 @@ basic.forever(function () {
         let distance = 0
         PL = pins.digitalReadPin(DigitalPin.P2)
         PR = pins.digitalReadPin(DigitalPin.P11)
-        serial.writeValue("x", PL)
-        serial.writeValue("x", PR)
+        DL = pins.digitalReadPin(DigitalPin.P13)
+        DR = pins.digitalReadPin(DigitalPin.P12)
+        serial.writeValue("PL", PL)
+        serial.writeValue("PR", PR)
+        serial.writeValue("DL", DL)
+        serial.writeValue("DR", DR)
         if (distance > 8) {
             Avance(50)
         } else {
